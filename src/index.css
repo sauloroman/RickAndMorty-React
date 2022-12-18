@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: none;
+  border: none;
+  font-family: inherit;
+}
+
+input {
+  border: none;
+  font-family: inherit;
+}
+
+/* HELPER CLASSES */
+
+.alive,
+.dead,
+.unknown {
+  color: #fff;
+  border-radius: 100px;
+  padding: .5rem 1rem;
+}
+
+.alive {
+  background-color: #2f9e44;
+}
+
+.dead {
+  background-color: #c92a2a;
+}
+
+.unknown {
+  background-color: #212529;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: .7;
+}
