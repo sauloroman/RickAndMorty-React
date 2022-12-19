@@ -47,7 +47,9 @@ input, select {
   font-family: inherit;
 }
 
-label {
+option {
+  background-color: var(--primary-color);
+  color: #fff;
   font-family: inherit;
 }
 
@@ -81,7 +83,7 @@ label {
 /* SPINNER */
 
 .loader {
-  color: #32345E;
+  color: var(--primary-color);
   font-size: 10px;
   display: block;
   width: 1em;

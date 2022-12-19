@@ -7,9 +7,9 @@ import CategoryIcon from '@mui/icons-material/Category';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import PublicIcon from '@mui/icons-material/Public';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import { ButtonFull, PageTitle } from "../Common";
+import { ComponentButton, ComponentPageTitle } from "../Common";
 
-const SelectedCharacterContainer = styled.div`
+const CharactersSelectedCardContainer = styled.div`
   padding: 5rem;
   border-left: 1px solid #DDD;
   height: 100%;
@@ -17,9 +17,9 @@ const SelectedCharacterContainer = styled.div`
   left: 75%;
   background-color: #fff;
   position: fixed;
-  `
+`
 
-const SelectedCharacterImageContainer = styled.div`
+const CharactersSelectedCardImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
@@ -31,19 +31,19 @@ const SelectedCharacterImageContainer = styled.div`
   margin-bottom: 5rem;
 `
 
-const SelectedCharacterImage = styled.img`
+const CharactersSelectedCardImage = styled.img`
   border-radius: 15px;
   width: 100%;
 `;
 
-const SelectedCharacterTitle = styled.h3`
+const CharactersSelectedCardTitle = styled.h3`
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 3rem;
 `
 
-const SelectedCharacterInfo = styled.ul`
+const CharactersSelectedCardInfo = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -52,7 +52,7 @@ const SelectedCharacterInfo = styled.ul`
   margin-bottom: 3rem;
 `
 
-const SelectedCharacterItem = styled.li`
+const CharactersSelectedCardItem = styled.li`
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -69,7 +69,7 @@ const SelectedCharacterItem = styled.li`
 
 `;
 
-export const SelectedCharacter = () => {
+export const CharactersSelectedCard = () => {
 
   const selectedCharacter = useSelector( store => store.selectedCharacter );
 
@@ -80,52 +80,50 @@ export const SelectedCharacter = () => {
                       : status === 'Dead' ? 'dead' : 'unknown'
 
   return (
-    <SelectedCharacterContainer className="animate__animated animate__fadeInRight">
+    <CharactersSelectedCardContainer className="animate__animated animate__fadeInRight">
 
-        <PageTitle>{name}</PageTitle>
+        <ComponentPageTitle>{name}</ComponentPageTitle>
 
-        <SelectedCharacterImageContainer>
-          <SelectedCharacterImage src={ image }/>
-        </SelectedCharacterImageContainer>
+        <CharactersSelectedCardImageContainer>
+          <CharactersSelectedCardImage src={ image }/>
+        </CharactersSelectedCardImageContainer>
 
-        <SelectedCharacterTitle>
+        <CharactersSelectedCardTitle>
           Character Information
-        </SelectedCharacterTitle>
+        </CharactersSelectedCardTitle>
 
-        <SelectedCharacterInfo>
-          <SelectedCharacterItem>
+        <CharactersSelectedCardInfo>
+          <CharactersSelectedCardItem>
             <Grid3x3Icon /> Id: <span>{ id }</span>
-          </SelectedCharacterItem>
+          </CharactersSelectedCardItem>
 
-          <SelectedCharacterItem>
+          <CharactersSelectedCardItem>
           <FavoriteIcon /> Status: <span className={`${finalStatus}`}>{ status }</span>
-          </SelectedCharacterItem>
+          </CharactersSelectedCardItem>
 
-          <SelectedCharacterItem>
+          <CharactersSelectedCardItem>
             <AccessibilityIcon /> Species: <span>{ species }</span>
-          </SelectedCharacterItem>
+          </CharactersSelectedCardItem>
 
-          <SelectedCharacterItem>
+          <CharactersSelectedCardItem>
             <CategoryIcon /> Type: <span>{ type?.length ? type : 'Unknown' }</span>
-          </SelectedCharacterItem>
+          </CharactersSelectedCardItem>
 
-          <SelectedCharacterItem>
+          <CharactersSelectedCardItem>
             <PublicIcon /> Origin: <span>{ origin?.name }</span>
-          </SelectedCharacterItem>
+          </CharactersSelectedCardItem>
 
-          <SelectedCharacterItem>
+          <CharactersSelectedCardItem>
             <LocationCityIcon /> Location: <span>{ location?.name }</span>
-          </SelectedCharacterItem>
+          </CharactersSelectedCardItem>
 
-          <SelectedCharacterItem>
+          <CharactersSelectedCardItem>
             <PlayArrowIcon /> { episode?.length } Episodes
-          </SelectedCharacterItem>
-        </SelectedCharacterInfo>
+          </CharactersSelectedCardItem>
+        </CharactersSelectedCardInfo>
 
-      <ButtonFull>
-        Add to Favourites
-      </ButtonFull>
+      <ComponentButton>Add to Favourites</ComponentButton>
 
-    </SelectedCharacterContainer>
+    </CharactersSelectedCardContainer>
   )
 }

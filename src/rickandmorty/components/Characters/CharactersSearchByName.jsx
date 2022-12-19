@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useForm } from "../../hooks";
 import { setSearchProperty } from "../../../store/slices/search.slice";
 
-const SearchCharacterByNameContainer = styled.div`
+const CharactersSearchByNameContainer = styled.div`
   border: 1px solid #ddd;
   border-radius: 100px;
   padding: 0 3rem;
@@ -18,17 +18,17 @@ const SearchCharacterByNameContainer = styled.div`
   }
 `;
 
-const FormSearch = styled.form`
+const CharactersSearchByNameForm = styled.form`
   width: 100%;
 `;
 
-const InputSearch = styled.input`
+const CharactersSearchByNameInput = styled.input`
   width: 100%;
   padding: 1.25rem;
   font-size: 1.6rem;
 `;
 
-export const SearchCharacterByName = () => {
+export const CharactersSearchByName = () => {
 
   const dispatch = useDispatch();
 
@@ -42,17 +42,16 @@ export const SearchCharacterByName = () => {
   }
 
   return (
-    <SearchCharacterByNameContainer>
+    <CharactersSearchByNameContainer>
       <SearchIcon />
-
-      <FormSearch onSubmit={ onSearchCharacter }>
-        <InputSearch 
+      <CharactersSearchByNameForm onSubmit={ onSearchCharacter }>
+        <CharactersSearchByNameInput 
           name="characterName"
           placeholder="Search a character"
           value={characterName}
           onChange={ onInputChange }
         />
-      </FormSearch>
-    </SearchCharacterByNameContainer>
+      </CharactersSearchByNameForm>
+    </CharactersSearchByNameContainer>
   )
 }

@@ -3,10 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCharacters } from "../../store/slices/characters.slice";
 import { setPagination } from "../../store/slices/pagination.slice";
 import { LayoutPage } from "../layout";
-import { CharactersList, NoCharacters, PageTitle, SearchByAttribute, SearchCharacterByName } from "../components";
+import { 
+  CharactersList, 
+  CharactersError, 
+  ComponentPageTitle, 
+  CharactersSearchByAttribute,
+  CharactersSearchByName } from "../components";
 import { Pagination, Spinner } from "../../ui/components";
 import { useFetch } from "../hooks";
-
 
 export const CharactersPage = () => {
 
@@ -26,16 +30,16 @@ export const CharactersPage = () => {
   
   return (
     <LayoutPage>
-      <PageTitle>Your characters</PageTitle>
-      <SearchCharacterByName />
-      <SearchByAttribute />
+      <ComponentPageTitle>Your characters</ComponentPageTitle>
+      <CharactersSearchByName />
+      <CharactersSearchByAttribute />
 
       { isLoading 
         ? (<Spinner />)
         : ( 
           characters.length
           ? (<CharactersList />) 
-          : (<NoCharacters/>)
+          : (<CharactersError />)
         )
       }
       

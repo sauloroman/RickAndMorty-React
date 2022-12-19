@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { SelectedCharacter } from "../components";
+import { CharactersSelectedCard } from "../components";
 
 const LayoutContainer = styled.div`
   display: grid;
@@ -16,7 +16,7 @@ export const LayoutPage = ({ children }) => {
       <PageContainer>
         {children}
       </PageContainer>
-      <SelectedCharacter />
+      <CharactersSelectedCard />
     </LayoutContainer>
   )
 }

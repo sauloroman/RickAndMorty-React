@@ -1,2 +1,3 @@
-export * from './PageTitle';
-export * from './ButtonFull';
+export * from './ComponentPageTitle';
+export * from './ComponentButton';
+export * from './ComponentCardCharacter'

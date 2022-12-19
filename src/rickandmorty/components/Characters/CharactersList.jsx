@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useSelector } from "react-redux";
-import { CharactersCard, NoCharacters } from "./";
+import { CharactersCard } from "./";
 
 const CharactersListContainer = styled.div`
   display: grid;

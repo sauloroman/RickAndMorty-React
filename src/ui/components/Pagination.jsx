@@ -5,7 +5,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import { useCounter } from "../../rickandmorty/hooks";
 import { useEffect } from "react";
-import { ButtonFull } from "../../rickandmorty/components";
+import { ComponentButton } from "../../rickandmorty/components";
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -61,7 +61,7 @@ export const Pagination = ({ onNewUrl }) => {
       {
         (characters.length) ? (
           <>
-            <ButtonFull style={{ borderRadius: '100px' }}>{ pagination?.count } characters</ButtonFull>
+            <ComponentButton style={{ borderRadius: '100px' }}>{ pagination?.count } characters</ComponentButton>
 
             <PaginationBox>
               <NavigateBeforeIcon onClick={ onPreviousUrl } style={{ display: pagination.prev ? 'block' : 'none' }} />

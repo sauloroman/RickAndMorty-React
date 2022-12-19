@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const PageTitleElement = styled.h2`
+export const ComponentPageTitle = styled.h2`
   font-size: 2.4rem;
   color: #393A48;
   font-weight: 700;
@@ -8,11 +8,3 @@ const PageTitleElement = styled.h2`
   border-bottom: 1px solid #DDD;
   margin-bottom: 2rem;
 `;
-
-export const PageTitle = ({ children }) => {
-  return (
-    <PageTitleElement>
-      { children }
-    </PageTitleElement>
-  )
-}

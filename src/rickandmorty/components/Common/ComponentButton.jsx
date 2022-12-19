@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const ButtonFullElement = styled.button`
+export const ComponentButton = styled.button`
   background-color: var(--button-color);
   border-radius: 100px;
   padding: 1.5rem 1rem;
@@ -16,8 +16,3 @@ const ButtonFullElement = styled.button`
   }
 `;
 
-export const ButtonFull = ({ children }) => {
-  return (
-    <ButtonFullElement>{children}</ButtonFullElement>
-  )
-}
