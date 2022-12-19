@@ -9,7 +9,6 @@ export const LocationsList = () => {
 
   const { arrayAmount } = useList( 'locationSelected', locationSelected, 125 );
 
-
   return (
     <ComponentSelectField>
       <ComponentSelectSelectElement 

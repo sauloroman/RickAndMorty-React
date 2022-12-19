@@ -8,8 +8,9 @@ import {
 import { useInformation } from "../../hooks";
   
 export const EpisodesInformation = () => {
+
   const { id, name, characters, air_date } = useInformation('episode');
-  console.log({name, id, characters, air_date});
+  
   return (
     <ComponentBannerInformationContainer
       className="animate__animated animate__fadeInDown"

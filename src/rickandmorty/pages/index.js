@@ -1,4 +1,4 @@
 export * from './CharactersPage';
 export * from './EpisodePage';
 export * from './LocationPage';
-export * from './SettingsPage';
+export * from './FavoritesPage';

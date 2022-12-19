@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MovieIcon from '@mui/icons-material/Movie';
-import SettingsIcon from '@mui/icons-material/Settings';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const NavContainer = styled.nav`
@@ -61,8 +61,8 @@ export const Navbar = () => {
         </NavItem>
 
         <NavItem>
-          <SettingsIcon />
-          <NavLink to='/settings' >Settings</NavLink>
+          <FavoriteIcon />
+          <NavLink to='/favorites' >Favourites</NavLink>
         </NavItem>
       </NavList>
 
