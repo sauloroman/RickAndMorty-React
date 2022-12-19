@@ -5,6 +5,7 @@ import { setCharacters } from "../../../store/slices/characters.slice";
 import { setPagination } from "../../../store/slices/pagination.slice";
 import { setSearchProperty } from "../../../store/slices/search.slice";
 import { useFetch, useForm } from "../../hooks";
+import { ComponentSelectField, ComponentSelectLabel, ComponentSelectOption, ComponentSelectSelectElement } from "../Common";
 
 const CharactersSearchByAttributeContainer = styled.div`
   margin-bottom: 3rem;
@@ -12,30 +13,6 @@ const CharactersSearchByAttributeContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 8rem;
   padding: 1rem 0;
-`;
-
-const CharactersSearchByAttributeField = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const CharactersSearchByAttributeLabel = styled.label`
-  font-size: 1.4rem;
-  font-weight: 500;
-  display: block;
-  margin-bottom: .5rem;
-`;
-
-const CharactersSearchByAttributeSelect = styled.select`
-  font-size: 1.4rem;
-  border: 1px solid #ddd;
-  border-radius: 100px;
-  padding: 1rem;
-  max-width: 100%;
-`;
-
-const CharactersSearchByAttributeOption = styled.option`
-  font-weight: bold;
 `;
 
 export const CharactersSearchByAttribute = () => {
@@ -96,44 +73,44 @@ export const CharactersSearchByAttribute = () => {
   return (
     <CharactersSearchByAttributeContainer>
       
-      <CharactersSearchByAttributeField>
-        <CharactersSearchByAttributeLabel>Status</CharactersSearchByAttributeLabel>
-        <CharactersSearchByAttributeSelect name="status" value={ status } onChange={ onInputChange }>
-          <CharactersSearchByAttributeOption value=''>Select a status</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='alive'>alive</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='dead'>dead</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='unknown'>unknown</CharactersSearchByAttributeOption>
-        </CharactersSearchByAttributeSelect>
-      </CharactersSearchByAttributeField>
+      <ComponentSelectField>
+        <ComponentSelectLabel>Status</ComponentSelectLabel>
+        <ComponentSelectSelectElement name="status" value={ status } onChange={ onInputChange }>
+          <ComponentSelectOption value=''>Select a status</ComponentSelectOption>
+          <ComponentSelectOption value='alive'>alive</ComponentSelectOption>
+          <ComponentSelectOption value='dead'>dead</ComponentSelectOption>
+          <ComponentSelectOption value='unknown'>unknown</ComponentSelectOption>
+        </ComponentSelectSelectElement>
+      </ComponentSelectField>
 
-      <CharactersSearchByAttributeField>
-        <CharactersSearchByAttributeLabel>Species</CharactersSearchByAttributeLabel>
-        <CharactersSearchByAttributeSelect  name="species" value={ species } onChange={ onInputChange }>
-          <CharactersSearchByAttributeOption value=''>Select a specie</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='human'>human</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='alien'>alien</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='humanoid'>humanoid</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='poopybutthole'>poopybutthole</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='mythological'>mythological</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='unknown'>unknown</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='animal'>animal</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='disease'>disease</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='robot'>robot</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='cronenberg'>cronenberg</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='planet'>planet</CharactersSearchByAttributeOption>
-        </CharactersSearchByAttributeSelect>
-      </CharactersSearchByAttributeField>
+      <ComponentSelectField>
+        <ComponentSelectLabel>Species</ComponentSelectLabel>
+        <ComponentSelectSelectElement  name="species" value={ species } onChange={ onInputChange }>
+          <ComponentSelectOption value=''>Select a specie</ComponentSelectOption>
+          <ComponentSelectOption value='human'>human</ComponentSelectOption>
+          <ComponentSelectOption value='alien'>alien</ComponentSelectOption>
+          <ComponentSelectOption value='humanoid'>humanoid</ComponentSelectOption>
+          <ComponentSelectOption value='poopybutthole'>poopybutthole</ComponentSelectOption>
+          <ComponentSelectOption value='mythological'>mythological</ComponentSelectOption>
+          <ComponentSelectOption value='unknown'>unknown</ComponentSelectOption>
+          <ComponentSelectOption value='animal'>animal</ComponentSelectOption>
+          <ComponentSelectOption value='disease'>disease</ComponentSelectOption>
+          <ComponentSelectOption value='robot'>robot</ComponentSelectOption>
+          <ComponentSelectOption value='cronenberg'>cronenberg</ComponentSelectOption>
+          <ComponentSelectOption value='planet'>planet</ComponentSelectOption>
+        </ComponentSelectSelectElement>
+      </ComponentSelectField>
 
-      <CharactersSearchByAttributeField>
-        <CharactersSearchByAttributeLabel>Gender</CharactersSearchByAttributeLabel>
-        <CharactersSearchByAttributeSelect  name="gender" value={ gender } onChange={ onInputChange }>
-          <CharactersSearchByAttributeOption value=''>Select a gender</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='female'>female</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='male'>male</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='genderless'>genderless</CharactersSearchByAttributeOption>
-          <CharactersSearchByAttributeOption value='unknown'>unknown</CharactersSearchByAttributeOption>
-        </CharactersSearchByAttributeSelect>
-      </CharactersSearchByAttributeField>
+      <ComponentSelectField>
+        <ComponentSelectLabel>Gender</ComponentSelectLabel>
+        <ComponentSelectSelectElement  name="gender" value={ gender } onChange={ onInputChange }>
+          <ComponentSelectOption value=''>Select a gender</ComponentSelectOption>
+          <ComponentSelectOption value='female'>female</ComponentSelectOption>
+          <ComponentSelectOption value='male'>male</ComponentSelectOption>
+          <ComponentSelectOption value='genderless'>genderless</ComponentSelectOption>
+          <ComponentSelectOption value='unknown'>unknown</ComponentSelectOption>
+        </ComponentSelectSelectElement>
+      </ComponentSelectField>
 
     </CharactersSearchByAttributeContainer>
   )

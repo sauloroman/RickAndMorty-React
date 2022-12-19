@@ -1,5 +1,11 @@
+import { ComponentPageTitle } from "../components"
+import { LayoutPage } from "../layout"
+
 export const EpisodePage = () => {
   return (
-    <div>EpisodePage</div>
+    <LayoutPage>
+      <ComponentPageTitle>Episodes</ComponentPageTitle>
+      
+    </LayoutPage>
   )
 }

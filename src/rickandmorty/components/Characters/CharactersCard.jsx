@@ -12,22 +12,22 @@ import {
 export const CharactersCard = ({ id, name, image, status }) => {
 
   const dispatch = useDispatch(); 
-
   const characters = useSelector( store => store.characters );
+
+  const onSetSelectedCharacter = ( id ) => {
+    const position = characters.findIndex( character => character.id === id );
+    dispatch( setSelectedCharacter( characters[position] ) );
+  }
 
   const finalStatus =  status == 'Alive' 
                       ? 'alive' 
                       : status === 'Dead' ? 'dead' : 'unknown'
 
-  const onSetSelectedCharacter = () => {
-    const position = characters.findIndex( character => character.id === id );
-    dispatch( setSelectedCharacter( characters[position] ) );
-  }
 
   return (
     <ComponentCardCharacterContainer 
       className="animate__animated animate__fadeIn"
-      onClick={ onSetSelectedCharacter }>
+      onClick={ () => onSetSelectedCharacter( id ) }>
       <ComponentCardCharacterImageContainer>
         <ComponentCardCharacterImage src={image} alt={name} />
       </ComponentCardCharacterImageContainer>

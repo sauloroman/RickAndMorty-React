@@ -1,25 +1,8 @@
-import styled from "@emotion/styled";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setLocationProperty } from "../../../store/slices/location.slice";
 import { useForm } from "../../hooks";
-
-const LocationsListContainer = styled.div`
-  padding: 1rem 0;
-  width: 100%;
-  margin-bottom: 2rem;
-`;
-
-const LocationListSelect = styled.select`
-  border: 1px solid #ddd;
-  border-radius: 100px;
-  padding: 1rem;
-  width: 50%;
-`;
-
-const LocationListOption = styled.option`
-  font-weight: 500;
-`;
+import { ComponentSelectField, ComponentSelectOption, ComponentSelectSelectElement } from "../Common";
 
 const locationsAmount = new Array(125).fill().map( (_, i) => i + 1 );
 
@@ -36,17 +19,22 @@ export const LocationsList = () => {
   }, [locationSelected])
 
   return (
-    <LocationsListContainer>
-      <LocationListSelect value={locationSelected} name='locationSelected' onChange={onInputChange} >
-        <LocationListOption>Choose one location</LocationListOption>
+    <ComponentSelectField>
+      <ComponentSelectSelectElement 
+        value={locationSelected} 
+        name='locationSelected' 
+        onChange={onInputChange} 
+        style={{ width: '50%', marginBottom: '2rem'}}
+      >
+        <ComponentSelectOption>Choose one location</ComponentSelectOption>
         {
           locationsAmount.map( locationNumber => (
-            <LocationListOption 
+            <ComponentSelectOption 
               key={ locationNumber }
-              value={locationNumber}>Location {locationNumber}</LocationListOption>
+              value={locationNumber}>Location {locationNumber}</ComponentSelectOption>
           ))
         }
-      </LocationListSelect>
-    </LocationsListContainer>
+      </ComponentSelectSelectElement>
+    </ComponentSelectField>
   )
 }

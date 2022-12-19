@@ -4,22 +4,20 @@ import {
   ComponentEmptyImage, 
   ComponentEmptyImageContainer, 
   ComponentEmptyInfo, 
-  ComponentEmptyNumber, 
   ComponentEmptyTitle } from '../Common/ComponentEmpty';
-import imageError from '../../../../public/img/404-image.png';
+import imageEmpty from '../../../../public/img/empty-image.png';
 
-export const CharactersError = () => {
+export const LocationEmpty = () => {
   return (
     <ComponentEmptyContainer className="animate__animated animate__fadeInUp">
 
       <ComponentEmptyImageContainer>
-        <ComponentEmptyImage src={ imageError } alt='404 error image'/>
+        <ComponentEmptyImage src={ imageEmpty } alt='Empty error image'/>
       </ComponentEmptyImageContainer>
 
       <ComponentEmptyInfo>
-        <ComponentEmptyNumber>404</ComponentEmptyNumber>
-        <ComponentEmptyTitle>No results found</ComponentEmptyTitle>
-        <ComponentEmptyDescription>We couldn't find what you searched for. <br/>Try searching again</ComponentEmptyDescription>
+        <ComponentEmptyTitle>No residents here</ComponentEmptyTitle>
+        <ComponentEmptyDescription>This is a place so boring. <br/>Try visit another one.</ComponentEmptyDescription>
       </ComponentEmptyInfo>
 
     </ComponentEmptyContainer>
