@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCharacters } from "../../store/slices/characters.slice";
 import { setPagination } from "../../store/slices/pagination.slice";
 import { LayoutPage } from "../layout";
-import { CharactersList, SearchCharacterByName } from "../components";
-import { Pagination } from "../../ui/components";
+import { CharactersList, NoCharacters, PageTitle, SearchByAttribute, SearchCharacterByName } from "../components";
+import { Pagination, Spinner } from "../../ui/components";
 import { useFetch } from "../hooks";
-import { PageTitle } from "../../RickAndMortyApp";
+
 
 export const CharactersPage = () => {
 
   const dispatch = useDispatch();
-  const [urlCharacters, setUrlCharacters] = useState('https://rickandmortyapi.com/api/character')
+  const [urlCharacters, setUrlCharacters] = useState('https://rickandmortyapi.com/api/character');
+  const characters = useSelector( store => store.characters );
   const { data, isLoading } = useFetch( urlCharacters );
 
   useEffect( () => {
@@ -23,18 +24,22 @@ export const CharactersPage = () => {
     setUrlCharacters( newUrl );
   }
   
-  console.log( data );
-
   return (
     <LayoutPage>
-      <SearchCharacterByName />
       <PageTitle>Your characters</PageTitle>
-      {
-        isLoading 
-        ? (<p>Cargando</p>)
-        : (<CharactersList />)
+      <SearchCharacterByName />
+      <SearchByAttribute />
+
+      { isLoading 
+        ? (<Spinner />)
+        : ( 
+          characters.length
+          ? (<CharactersList />) 
+          : (<NoCharacters/>)
+        )
       }
-      <Pagination onNewUrl = {onNewUrlCharacters} />
+      
+      <Pagination onNewUrl = {onNewUrlCharacters} />  
     </LayoutPage>
   )
 }

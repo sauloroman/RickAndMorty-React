@@ -1,7 +1,5 @@
 import { useSelector } from "react-redux"
 import styled from "@emotion/styled"
-import { PageTitle } from "../../RickAndMortyApp"
-
 import Grid3x3Icon from '@mui/icons-material/Grid3x3';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AccessibilityIcon from '@mui/icons-material/Accessibility';
@@ -9,6 +7,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import PublicIcon from '@mui/icons-material/Public';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { ButtonFull, PageTitle } from "../Common";
 
 const SelectedCharacterContainer = styled.div`
   padding: 5rem;
@@ -70,23 +69,6 @@ const SelectedCharacterItem = styled.li`
 
 `;
 
-const SelectedCharacterButton = styled.button`
-  background-color: #1864ab;
-  border-radius: 5px;
-  padding: 1.5rem;
-  color: #fff;
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 0 50%;
-  width: 50%;
-  transition: all .3s;
-
-  &:hover {
-    background-color: #228be6;
-  }
-`;
-
 export const SelectedCharacter = () => {
 
   const selectedCharacter = useSelector( store => store.selectedCharacter );
@@ -140,9 +122,9 @@ export const SelectedCharacter = () => {
           </SelectedCharacterItem>
         </SelectedCharacterInfo>
 
-      <SelectedCharacterButton>
+      <ButtonFull>
         Add to Favourites
-      </SelectedCharacterButton>
+      </ButtonFull>
 
     </SelectedCharacterContainer>
   )

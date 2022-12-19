@@ -1,4 +1,3 @@
-export * from './CharactersCard';
-export * from './CharactersList';
-export * from './SearchCharacterByName';
-export * from './SelectedCharacter';
+export * from './Characters';
+export * from './Common';
+export * from './Locations';

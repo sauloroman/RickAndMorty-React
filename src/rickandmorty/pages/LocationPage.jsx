@@ -1,5 +1,5 @@
-import { PageTitle } from "../../RickAndMortyApp"
 import { LayoutPage } from "../layout"
+import { PageTitle } from "../components"
 
 export const LocationPage = () => {
 

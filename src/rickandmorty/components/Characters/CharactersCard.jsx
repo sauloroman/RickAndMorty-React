@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedCharacter } from "../../store/slices/selectedCharacter.slice";
+import { setSelectedCharacter } from "../../../store/slices/selectedCharacter.slice";
 import styled from "@emotion/styled";
 
 const CharactersCardContainer = styled.div`
@@ -29,6 +29,13 @@ const ImageCharacter = styled.img`
   border-radius: 15px;
 `;
 
+const CharacterInfo = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const CharacterName = styled.p`
   font-size: 1.2rem;
   font-weight: 700;
@@ -44,11 +51,22 @@ const CharacterId = styled.span`
   display: block;
 `;
 
-export const CharactersCard = ({ id, name, image }) => {
+const CharacterStatus = styled.div`
+  border-radius: 50%;
+  padding: 0;
+  width: 10px;
+  height: 10px;
+`;
+
+export const CharactersCard = ({ id, name, image, status }) => {
 
   const dispatch = useDispatch(); 
 
   const characters = useSelector( store => store.characters );
+
+  const finalStatus =  status == 'Alive' 
+                      ? 'alive' 
+                      : status === 'Dead' ? 'dead' : 'unknown'
 
   const onSetSelectedCharacter = () => {
     const position = characters.findIndex( character => character.id === id );
@@ -64,7 +82,12 @@ export const CharactersCard = ({ id, name, image }) => {
       </ImageCharacterContainer>
 
       <CharacterName>{name}</CharacterName>
-      <CharacterId>#{id}</CharacterId>
+
+      <CharacterInfo>
+        <CharacterStatus className={finalStatus}></CharacterStatus>
+        <CharacterId>#{id}</CharacterId>
+      </CharacterInfo>
+
     </CharactersCardContainer>
   );
 };

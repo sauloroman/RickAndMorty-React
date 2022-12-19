@@ -7,7 +7,7 @@ const SideBarNavigation = styled.aside`
 `;
 
 const SideBarNavigationContainer = styled.div`
-  background-color: #32345E;
+  background-color: var(--primary-color);
   width: 20%;
   height: 100vh;
   max-height: 100%;

@@ -3,20 +3,14 @@ import { useSelector } from "react-redux"
 
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import { useCounter } from "../../rickandmorty/hooks";
+import { useEffect } from "react";
+import { ButtonFull } from "../../rickandmorty/components";
 
 const PaginationContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-const PaginationAmount = styled.p`
-  font-size: 1.4rem;
-  font-weight: 700;
-  background-color: #1864ab;
-  padding: 1rem;
-  border-radius: 100px;
-  color: #fff;  
 `;
 
 const PaginationBox = styled.div`
@@ -26,14 +20,14 @@ const PaginationBox = styled.div`
 
   svg {
     font-size: 2.4rem;
-    background-color: #1864ab;
+    background-color: var(--button-color);
     border-radius: 50%;
     color: #fff;
     transition: all .4s;
     cursor: pointer;
 
     &:hover {
-      background-color: #228be6;
+      background-color: var(--button-color-2);
     }
   }
 `
@@ -44,26 +38,39 @@ const PaginationNumber = styled.p`
 export const Pagination = ({ onNewUrl }) => {
 
   const pagination = useSelector( store => store.pagination );
-  const numberPage = String( pagination?.next?.at(-1) ) - '1';
+  const { name, status, gender, species } = useSelector( store => store.search );
+  const characters = useSelector( store => store.characters );
+  const { counter, onIncrementCounter, onDecrementCounter, onSetCounter } = useCounter( 1, pagination?.pages );
 
   const onNextUrl = () => {
     onNewUrl( pagination.next )
+    onIncrementCounter();
   }
 
   const onPreviousUrl = () => {
     onNewUrl( pagination.prev )
-  }
+    onDecrementCounter();
+  } 
+
+  useEffect( () => {
+    onSetCounter( 1 );
+  }, [name, status, gender, species]);
 
   return (
     <PaginationContainer>
-      <PaginationAmount>{ pagination?.count } characters</PaginationAmount>
+      {
+        (characters.length) ? (
+          <>
+            <ButtonFull style={{ borderRadius: '100px' }}>{ pagination?.count } characters</ButtonFull>
 
-      <PaginationBox>
-        <NavigateBeforeIcon onClick={ onPreviousUrl } style={{ display: pagination.prev ? 'block' : 'none' }} />
-        <PaginationNumber>{numberPage || 1 }</PaginationNumber>
-        <NavigateNextIcon onClick={ onNextUrl } style={{ display: pagination.next ? 'block' : 'none' }}/>
-      </PaginationBox>
-
+            <PaginationBox>
+              <NavigateBeforeIcon onClick={ onPreviousUrl } style={{ display: pagination.prev ? 'block' : 'none' }} />
+              <PaginationNumber>{counter}</PaginationNumber>
+              <NavigateNextIcon onClick={ onNextUrl } style={{ display: pagination.next ? 'block' : 'none' }}/>
+            </PaginationBox>
+          </>
+        ) : ( null )
+      }
     </PaginationContainer>
   )
 }

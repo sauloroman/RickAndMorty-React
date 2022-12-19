@@ -1,9 +1,8 @@
 import styled from "@emotion/styled"
 import { useDispatch } from "react-redux";
-import { setCharacters } from "../../store/slices/characters.slice";
-import { setPagination } from "../../store/slices/pagination.slice";
-import { useFetch, useForm } from "../hooks";
 import SearchIcon from '@mui/icons-material/Search';
+import { useForm } from "../../hooks";
+import { setSearchProperty } from "../../../store/slices/search.slice";
 
 const SearchCharacterByNameContainer = styled.div`
   border: 1px solid #ddd;
@@ -37,18 +36,9 @@ export const SearchCharacterByName = () => {
     characterName: ''
   });
 
-  const { data } = useFetch( `https://rickandmortyapi.com/api/character?name=${characterName}` );
-
   const onSearchCharacter = (e) => {
     e.preventDefault();
-    
-    if ( !data.error ) {
-      dispatch( setCharacters( data?.results ) );
-      dispatch( setPagination( data?.info ) )
-    } else {
-      dispatch( setCharacters([]));
-    }
-  
+    dispatch( setSearchProperty({ property: 'name', value: characterName}) );
   }
 
   return (
