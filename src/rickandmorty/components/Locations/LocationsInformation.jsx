@@ -1,15 +1,16 @@
-import { useSelector } from "react-redux"
 import MapIcon from '@mui/icons-material/Map';
 import { 
   ComponentBannerInformationContainer, 
   ComponentBannerInformationContent, 
+  ComponentBannerQuantity, 
   ComponentBannerTitle, 
   ComponentBannerTitleContainer, 
   ComponentBannerTitleText } from "../Common";
+import { useInformation } from "../../hooks";
 
 export const LocationsInformation = () => {
-  const { information } = useSelector( store => store.location );
-  const { id, name, type, dimension, residents } = !!information && information;
+
+  const { id, name, type, dimension, residents } = useInformation('location');
 
   return (
     <ComponentBannerInformationContainer 
@@ -30,7 +31,7 @@ export const LocationsInformation = () => {
       <ComponentBannerInformationContent>
         <p>Id: {id}</p>
         <p>Type: {type}</p>
-        <p>Residents: {residents?.length}</p>
+        <ComponentBannerQuantity>Residents: {residents?.length}</ComponentBannerQuantity>
       </ComponentBannerInformationContent>
     </ComponentBannerInformationContainer>
   )

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { setLocationProperty } from "../../store/slices/location.slice";
 import { LayoutPage } from "../layout"
-import { ComponentPageTitle, LocationsGrid, LocationsInformation, LocationsList } from "../components"
+import { LocationsGrid, LocationsInformation, LocationsList } from "../components"
 import { Spinner } from "../../ui/components";
 import { useFetch } from "../hooks";
 
@@ -23,8 +23,7 @@ export const LocationPage = () => {
   }, [data]);
 
   return (
-    <LayoutPage>
-      <ComponentPageTitle>Locations</ComponentPageTitle>
+    <LayoutPage title='Locations'>
       <LocationsList />
 
       {

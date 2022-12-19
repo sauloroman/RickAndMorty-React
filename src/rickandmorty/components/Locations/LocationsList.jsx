@@ -1,22 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setLocationProperty } from "../../../store/slices/location.slice";
-import { useForm } from "../../hooks";
+import { useForm, useList } from "../../hooks";
 import { ComponentSelectField, ComponentSelectOption, ComponentSelectSelectElement } from "../Common";
 
-const locationsAmount = new Array(125).fill().map( (_, i) => i + 1 );
-
 export const LocationsList = () => {
-
-  const dispatch = useDispatch();
 
   const { locationSelected, onInputChange } = useForm({
     locationSelected: ''
   });
 
-  useEffect( () => {
-    dispatch( setLocationProperty({ property: 'locationNumber', value: locationSelected }) );
-  }, [locationSelected])
+  const { arrayAmount } = useList( 'locationSelected', locationSelected, 125 );
+
 
   return (
     <ComponentSelectField>
@@ -26,9 +18,9 @@ export const LocationsList = () => {
         onChange={onInputChange} 
         style={{ width: '50%', marginBottom: '2rem'}}
       >
-        <ComponentSelectOption>Choose one location</ComponentSelectOption>
+        <ComponentSelectOption value={1}>Choose one location</ComponentSelectOption>
         {
-          locationsAmount.map( locationNumber => (
+          arrayAmount.map( locationNumber => (
             <ComponentSelectOption 
               key={ locationNumber }
               value={locationNumber}>Location {locationNumber}</ComponentSelectOption>

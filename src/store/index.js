@@ -4,6 +4,7 @@ import selectedCharacterSlice from "./slices/selectedCharacter.slice";
 import paginationSlice from "./slices/pagination.slice";
 import searchSlice from "./slices/search.slice";
 import locationSlice from "./slices/location.slice";
+import episodeSlice from "./slices/episode.slice";
 
 export default configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export default configureStore({
     selectedCharacter: selectedCharacterSlice,
     pagination: paginationSlice,
     search: searchSlice,
-    location: locationSlice
+    location: locationSlice,
+    episode: episodeSlice
   }
 })

@@ -1,4 +1,7 @@
 import styled from "@emotion/styled";
+import { useDispatch } from "react-redux";
+import { setSelectedCharacter } from "../../../store/slices/selectedCharacter.slice";
+import { useFetch } from "../../hooks";
 
 const ComponentCardCharacterContainer = styled.div`
   border: 1px solid #ddd;
@@ -55,6 +58,37 @@ const ComponentCardCharacterStatus = styled.div`
   width: 10px;
   height: 10px;
 `;
+
+export const ComponentCardCharacter = ({url}) => {
+  const dispatch = useDispatch();
+
+  const { data } = useFetch( url );
+
+  const finalStatus =  data?.status == 'Alive' 
+                      ? 'alive' 
+                      : data?.status === 'Dead' ? 'dead' : 'unknown'
+
+  const onSelectCharacterCard = () => {
+    dispatch( setSelectedCharacter( data ) );
+  }
+
+  return (
+    <ComponentCardCharacterContainer 
+    className="animate__animated animate__fadeIn"
+    onClick={ onSelectCharacterCard }>
+      <ComponentCardCharacterImageContainer>
+        <ComponentCardCharacterImage src={data?.image} alt={data?.name} />
+      </ComponentCardCharacterImageContainer>
+
+      <ComponentCardCharacterName>{data?.name}</ComponentCardCharacterName>
+
+      <ComponentCardCharacterInfo>
+        <ComponentCardCharacterStatus className={finalStatus}></ComponentCardCharacterStatus>
+        <ComponentCardCharacterId>#{data?.id}</ComponentCardCharacterId>
+      </ComponentCardCharacterInfo>
+    </ComponentCardCharacterContainer>
+  )
+}
 
 export {
   ComponentCardCharacterContainer,

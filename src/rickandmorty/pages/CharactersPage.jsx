@@ -6,7 +6,6 @@ import { LayoutPage } from "../layout";
 import { 
   CharactersList, 
   CharactersError, 
-  ComponentPageTitle, 
   CharactersSearchByAttribute,
   CharactersSearchByName } from "../components";
 import { Pagination, Spinner } from "../../ui/components";
@@ -29,8 +28,7 @@ export const CharactersPage = () => {
   }
   
   return (
-    <LayoutPage>
-      <ComponentPageTitle>Your characters</ComponentPageTitle>
+    <LayoutPage title='Your characters'>
       <CharactersSearchByName />
       <CharactersSearchByAttribute />
 

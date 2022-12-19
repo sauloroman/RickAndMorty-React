@@ -2,10 +2,11 @@ import styled from "@emotion/styled";
 
 const ComponentBannerInformationContainer = styled.div`
   height: 20rem;
+  object-fit: contain;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 15px;
-  background-position: 50% 65%;
+  background-position: center;
   position: relative;
   box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
   margin-bottom: 5rem;
@@ -51,10 +52,20 @@ const ComponentBannerInformationContent = styled.div`
   color: #fff;
 `
 
+const ComponentBannerQuantity = styled.p`
+  background-color: var(--button-color);
+  padding: 1rem;
+  border-radius: 100px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+`;
+
 export {
   ComponentBannerInformationContainer,
   ComponentBannerTitleContainer,
   ComponentBannerTitle,
   ComponentBannerTitleText,
-  ComponentBannerInformationContent
+  ComponentBannerInformationContent,
+  ComponentBannerQuantity
 }

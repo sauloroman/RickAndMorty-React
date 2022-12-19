@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { ComponentList } from "../Common";
-import { LocationEmpty, LocationsCard } from "./";
+import { ComponentCardCharacter, ComponentList } from "../Common";
+import { LocationEmpty } from "./";
 
 export const LocationsGrid = () => {
 
@@ -13,7 +13,7 @@ export const LocationsGrid = () => {
         ? (
           <ComponentList>
             {information?.residents.map( residentUrl => (
-              <LocationsCard key={residentUrl} url={residentUrl} />
+              <ComponentCardCharacter key={residentUrl} url={residentUrl} />
             ))}
           </ComponentList>
         )
