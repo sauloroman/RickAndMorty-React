@@ -29,10 +29,6 @@ const FavoritesSlideImage = styled.img`
   border-radius: 15px;
 `;
 
-const FavoritesSlideInformation = styled.div`
-  color: #fff;
-`;
-
 export const FavoritesSlide = ({ name, image }) => {
   return (
     <FavoritesSlideContainer>

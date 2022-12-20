@@ -29,7 +29,7 @@ export const FavoritesSlider = () => {
         {
           favorites.map( favorite => (
             <SwiperSlide>
-              <FavoritesSlide key={favorite.id} {...favorite}/>
+              <FavoritesSlide key={ favorite.name } {...favorite}/>
             </SwiperSlide>
           ))
         }
