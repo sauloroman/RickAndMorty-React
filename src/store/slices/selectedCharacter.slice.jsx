@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const selectedCharacterSlice = createSlice({
   name: 'selectedCharacter',
-  initialState:     
+  initialState: JSON.parse( localStorage.getItem('selectedCharacter') ) ||    
   {
     "id": 265,
     "name": "Pickle Rick",

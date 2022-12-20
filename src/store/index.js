@@ -5,6 +5,7 @@ import paginationSlice from "./slices/pagination.slice";
 import searchSlice from "./slices/search.slice";
 import locationSlice from "./slices/location.slice";
 import episodeSlice from "./slices/episode.slice";
+import favoritesSlice from "./slices/favorites.slice";
 
 export default configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export default configureStore({
     pagination: paginationSlice,
     search: searchSlice,
     location: locationSlice,
-    episode: episodeSlice
+    episode: episodeSlice,
+    favorites: favoritesSlice
   }
 })

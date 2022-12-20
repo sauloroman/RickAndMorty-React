@@ -62,7 +62,7 @@ export const Navbar = () => {
 
         <NavItem>
           <FavoriteIcon />
-          <NavLink to='/favorites' >Favourites</NavLink>
+          <NavLink to='/favorites' >Favorites</NavLink>
         </NavItem>
       </NavList>
 

@@ -66,7 +66,7 @@ export const ComponentCardCharacter = ({url}) => {
 
   const finalStatus =  data?.status == 'Alive' 
                       ? 'alive' 
-                      : data?.status === 'Dead' ? 'dead' : 'unknown'
+                      : data?.status === 'Dead' ? 'dead' : 'unknown';
 
   const onSelectCharacterCard = () => {
     dispatch( setSelectedCharacter( data ) );

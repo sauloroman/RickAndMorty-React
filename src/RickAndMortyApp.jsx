@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import { AppRouter } from "./router";
+import styled from "@emotion/styled";
 import { Sidebar } from "./ui/components/Sidebar";
 
 const ContainerApp = styled.div`

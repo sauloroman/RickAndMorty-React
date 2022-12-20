@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import styled from "@emotion/styled"
 import { CharactersSelectedCard, ComponentPageTitle } from "../components";
 
@@ -11,6 +13,18 @@ const PageContainer = styled.div`
 `
 
 export const LayoutPage = ({ children, title }) => {
+
+  const selectedCharacter = useSelector( store => store.selectedCharacter );
+  const favorites = useSelector( store => store.favorites );
+
+  useEffect( () => {
+    localStorage.setItem('selectedCharacter', JSON.stringify( selectedCharacter ) );
+  }, [selectedCharacter] );
+
+  useEffect( () => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites])
+
   return (
     <LayoutContainer>
       <PageContainer>
