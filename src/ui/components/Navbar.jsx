@@ -38,6 +38,7 @@ const NavItem = styled.li`
   } 
 
   &:hover { 
+    background-color: var(--button-color);
     color: #fff;
   }
 `;

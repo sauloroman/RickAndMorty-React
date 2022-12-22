@@ -1,5 +1,23 @@
 /* THEMES */
 
+:root body.white-mode {
+  --primary-color: #fff;
+  --button-color: #000;
+  --button-favorite-color: #F89D13;
+  --button-favorite-color-tint: #feebd0;
+}
+
+:root body.red-mode {
+  --title-color: #d74064;
+  --text-card: #a7324e;
+  --primary-color: #ef476f;
+  --primary-color-tint: #fcdae2;
+  --button-color: #06d6a0;
+  --button-color-2: #6ae6c6;
+  --button-favorite-color: #118ab2;
+  --button-favorite-color-tint: #cfe8f0;
+}
+
 :root body.yellow-mode { /*Black logo*/
   --primary-color: #fca311;
   --button-color: #14213d;

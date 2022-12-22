@@ -2,6 +2,8 @@ import styled from "@emotion/styled"
 import { Navbar } from "./";
 import logoWhite from '../../../public/img/logo-rickandmorty.png'
 import logoBlack from '../../../public/img/logoBlack.svg'
+import { useSelector } from "react-redux";
+import { getCorrectLogo } from "../../rickandmorty/helpers";
 
 const SideBarNavigation = styled.aside`
   position: relative;
@@ -17,6 +19,7 @@ const SideBarNavigationContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  border-right: 1px solid var(--border-color);
 `;
 
 const ImageContainer = styled.div`
@@ -30,11 +33,15 @@ const ImageLogo = styled.img`
 `
 
 export const Sidebar = () => {
+
+  const theme = useSelector( store => store.theme );
+  const logo = getCorrectLogo( theme );
+
   return (
     <SideBarNavigation>
       <SideBarNavigationContainer>
         <ImageContainer>
-          <ImageLogo src={ logoBlack } alt="Icon Rick and Morty" />
+          <ImageLogo src={ logo === 'white' ? logoWhite : logoBlack } alt="Icon Rick and Morty" />
         </ImageContainer>
 
         <Navbar />
