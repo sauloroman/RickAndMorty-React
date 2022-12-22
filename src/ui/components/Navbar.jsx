@@ -5,6 +5,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MovieIcon from '@mui/icons-material/Movie';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LogoutIcon from '@mui/icons-material/Logout';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
 
 const NavContainer = styled.nav`
   display: flex;
@@ -19,7 +20,7 @@ const NavList = styled.ul`
 `
 
 const NavItem = styled.li`
-  color: #CACAE2;
+  color: var( --primary-color-tint );
   display: flex;
   align-items: center;
   padding: 3rem 5rem;
@@ -31,7 +32,7 @@ const NavItem = styled.li`
   }
 
   a {
-    color: #CACAE2;
+    color: var( --primary-color-tint );
     font-size: 1.8rem;
     font-weight: 700;
   } 
@@ -64,11 +65,16 @@ export const Navbar = () => {
           <FavoriteIcon />
           <NavLink to='/favorites' >Favorites</NavLink>
         </NavItem>
+
+        <NavItem>
+          <ColorLensIcon />
+          <NavLink to='/colors' >Colors</NavLink>
+        </NavItem>
       </NavList>
 
       <NavItem>
         <LogoutIcon />
-        <NavLink to='/settings' >Logout</NavLink>
+        <NavLink to='/auth/init' >Logout</NavLink>
       </NavItem>
     </NavContainer>
   )

@@ -4,14 +4,14 @@ import { setSelectedCharacter } from "../../../store/slices/selectedCharacter.sl
 import { useFetch } from "../../hooks";
 
 const ComponentCardCharacterContainer = styled.div`
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 15px;
   padding: 1.2rem;
   cursor: pointer;
   position: relative;
   transition: all .3s;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.095);
-  background-color: #fff;;
+  background-color: var(--bg-card);
 
   &:hover {
     transform: translateY(-5px);
@@ -42,7 +42,7 @@ const ComponentCardCharacterName = styled.p`
   font-weight: 700;
   text-align: center;
   margin-bottom: 0.75rem;
-  color: #424250;
+  color: var(--text-card);
 `;
 
 const ComponentCardCharacterId = styled.span`

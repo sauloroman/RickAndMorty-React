@@ -1,12 +1,14 @@
 import styled from "@emotion/styled"
 import { Navbar } from "./";
-import logo from '../../../public/img/logo-rickandmorty.png'
+import logoWhite from '../../../public/img/logo-rickandmorty.png'
+import logoBlack from '../../../public/img/logoBlack.svg'
 
 const SideBarNavigation = styled.aside`
   position: relative;
-`;
+  `;
 
 const SideBarNavigationContainer = styled.div`
+  transition: all .4s;
   background-color: var(--primary-color);
   width: 20%;
   height: 100vh;
@@ -32,7 +34,7 @@ export const Sidebar = () => {
     <SideBarNavigation>
       <SideBarNavigationContainer>
         <ImageContainer>
-          <ImageLogo src={ logo } alt="Icon Rick and Morty" />
+          <ImageLogo src={ logoBlack } alt="Icon Rick and Morty" />
         </ImageContainer>
 
         <Navbar />

@@ -1,8 +1,8 @@
 :root {
   --bg-color: #fff;
-  --primary-color: #32345E;
-  --button-color: #1864ab;
-  --button-color-2: #228be6;
+  --bg-card: #fff;
+  --text-color: #000;
+  --border-color: #ddd;
 }
 
 *,
@@ -19,6 +19,9 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all .4s;
 }
 
 img {
@@ -43,6 +46,8 @@ button {
 }
 
 input, select {
+  background-color: var(--bg-card);
+  color: var(--text-color);
   border: none;
   font-family: inherit;
 }
@@ -155,7 +160,7 @@ option {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: var(--bg-color);
 
   /* Center slide text vertically */
   display: -webkit-box;

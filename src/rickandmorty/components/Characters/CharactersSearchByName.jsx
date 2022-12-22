@@ -5,9 +5,10 @@ import { useForm } from "../../hooks";
 import { setSearchProperty } from "../../../store/slices/search.slice";
 
 const CharactersSearchByNameContainer = styled.div`
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 100px;
   padding: 0 3rem;
+  background-color: var(--bg-card);
   margin-bottom: 3rem;
   display: flex;
   align-items: center;

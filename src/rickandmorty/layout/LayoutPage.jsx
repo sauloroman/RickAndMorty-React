@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import styled from "@emotion/styled"
 import { CharactersSelectedCard, ComponentPageTitle } from "../components";
+import { Sidebar } from "../../ui/components";
 
 const LayoutContainer = styled.div`
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 20% 55% 25%;
 `;
 
 const PageContainer = styled.div`
@@ -27,10 +28,13 @@ export const LayoutPage = ({ children, title }) => {
 
   return (
     <LayoutContainer>
+      <Sidebar />
+
       <PageContainer>
-      <ComponentPageTitle>{title}</ComponentPageTitle>
+        <ComponentPageTitle>{title}</ComponentPageTitle>
         {children}
       </PageContainer>
+
       <CharactersSelectedCard />
     </LayoutContainer>
   )

@@ -17,7 +17,7 @@ export const FavoritesCard = ({ favorite}) => {
     <ComponentCardCharacterContainer 
       className="animate__animated animate__fadeIn"
       onClick={ onSelectCharacterCard } 
-      style={{ backgroundColor: `#dbe4ff`}}>
+      style={{ backgroundColor: `var( --button-favorite-color-tint)`}}>
       <ComponentCardCharacterImageContainer>
         <ComponentCardCharacterImage src={favorite?.image} alt={favorite?.name} />
       </ComponentCardCharacterImageContainer>

@@ -13,11 +13,11 @@ import { IsInFavorites } from "../../helpers";
 
 const CharactersSelectedCardContainer = styled.div`
   padding: 5rem;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid var(--border-color);
   height: 100%;
   width: 25%;
   left: 75%;
-  background-color: #fff;
+  background-color: var(--bg-card);
   position: fixed;
 `;
 
@@ -40,6 +40,7 @@ const CharactersSelectedCardImage = styled.img`
 
 const CharactersSelectedCardTitle = styled.h3`
   text-align: center;
+  color: var(--title-color);
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 3rem;
@@ -134,8 +135,8 @@ export const CharactersSelectedCard = () => {
         onClick={onToggleFavorite}
         style={{
           backgroundColor: IsInFavorites( favorites, selectedCharacter.id )
-            ? "#9c36b5"
-            : "#1864ab",
+            ? 'var(--button-favorite-color)'
+            : 'var(--button-color)',
         }}
       >
         {IsInFavorites( favorites, selectedCharacter.id )

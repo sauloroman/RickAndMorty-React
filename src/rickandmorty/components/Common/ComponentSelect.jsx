@@ -6,6 +6,12 @@ const ComponentSelectField = styled.div`
 `;
 
 const ComponentSelectLabel = styled.label`
+  background-color: var(--button-color);
+  width: 10rem;
+  text-align: center;
+  border-radius: 100px;
+  padding: .5rem;
+  color: #fff;
   font-size: 1.4rem;
   font-weight: 500;
   display: block;
@@ -14,7 +20,7 @@ const ComponentSelectLabel = styled.label`
 
 const ComponentSelectSelectElement = styled.select`
   font-size: 1.4rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 100px;
   padding: 1rem;
   max-width: 100%;

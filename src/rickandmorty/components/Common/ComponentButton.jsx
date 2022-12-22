@@ -12,7 +12,7 @@ export const ComponentButton = styled.button`
   transition: all .3s;
 
   &:hover {
-    background-color: var(--button-color-2);;
+    background-color: var(--button-color-2);
   }
 `;
 

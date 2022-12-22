@@ -1,0 +1,77 @@
+/* THEMES */
+
+:root body.yellow-mode { /*Black logo*/
+  --primary-color: #fca311;
+  --button-color: #14213d;
+  --button-favorite-color: #000000;
+  --button-favorite-color-tint: #e6e6e6;
+}
+
+:root body.gray-mode {
+  --title-color: #2a2a2a;
+  --text-card: #0b0b0b;
+  --primary-color: #353535;
+  --primary-color-tint: #ebebeb;
+  --button-color: #3c6e71;
+  --button-color-2: #8aa8aa;
+  --button-favorite-color: #284b63;
+  --button-favorite-color-tint: #bfc9d0;
+}
+
+:root body.green-mode {
+  --title-color: #2d5234;
+  --text-card: #223d27;
+  --primary-color: #386641;
+  --primary-color-tint: #c3d1c6;
+  --button-color: #a7c957;
+  --button-color-2: #cadf9a;
+  --button-favorite-color: #bc4749;
+  --button-favorite-color-tint: #ebc8c8;
+}
+
+:root body.blue-mode {
+  --title-color: #19326d;
+  --text-card: #081124;
+  --primary-color: #1C3879;
+  --primary-color-tint: #d2d7e4;
+  --button-color: #4FA095;
+  --button-color-2: #95c6bf;
+  --button-favorite-color: #E8AA42;
+  --button-favorite-color-tint: #f8e6c6;
+}
+
+:root body.orange-mode {
+  --title-color: #6b2d19;
+  --text-card: #963f22;
+  --primary-color: #D65A31;
+  --primary-color-tint: #fbefea;
+  --button-color: #581845;
+  --button-color-2: #9b748f;
+  --button-favorite-color: #C70039;
+  --button-favorite-color-tint: #f4ccd7;
+}
+
+:root body.purple-mode {
+  --title-color: #2d2f55;
+  --text-card: #424250;
+  --primary-color: #32345E;
+  --primary-color-tint: #CACAE2;
+  --button-color: #1864ab;
+  --button-color-2: #228be6;
+  --button-favorite-color: #9c36b5;
+  --button-favorite-color-tint: #e1c3e9;
+}
+
+:root body.black-mode {
+  --title-color: #fff;
+  --bg-color: #1E1E1E;
+  --bg-card: #2B2D2E;
+  --text-color: #fff;
+  --text-card: #fff;
+  --border-color: #888;
+  --primary-color: #2B2D2E;
+  --button-color: #6684CF;
+  --button-color-2: #a3b5e2;
+  --button-favorite-color: #0CA581;
+  --button-favorite-color-tint: #b6e4d9;
+}
