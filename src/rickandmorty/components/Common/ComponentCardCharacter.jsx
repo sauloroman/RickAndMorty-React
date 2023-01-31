@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useDispatch } from "react-redux";
 import { setSelectedCharacter } from "../../../store/slices/selectedCharacter.slice";
+import { toggleSelectedCharacter } from "../../helpers";
 import { useFetch } from "../../hooks";
 
 const ComponentCardCharacterContainer = styled.div`
@@ -70,6 +71,9 @@ export const ComponentCardCharacter = ({url}) => {
 
   const onSelectCharacterCard = () => {
     dispatch( setSelectedCharacter( data ) );
+    if ( !document.querySelector('.show-selected') ) {
+      toggleSelectedCharacter();
+    }
   }
 
   return (

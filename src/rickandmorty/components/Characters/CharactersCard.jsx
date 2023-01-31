@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedCharacter } from "../../../store/slices/selectedCharacter.slice";
+import { toggleSelectedCharacter } from "../../helpers";
 import { 
   ComponentCardCharacterContainer, 
   ComponentCardCharacterId, 
@@ -17,6 +18,11 @@ export const CharactersCard = ({ id, name, image, status }) => {
   const onSetSelectedCharacter = ( id ) => {
     const position = characters.findIndex( character => character.id === id );
     dispatch( setSelectedCharacter( characters[position] ) );
+    
+    if ( !document.querySelector('.show-selected') ) {
+      toggleSelectedCharacter();
+    }
+
   }
 
   const finalStatus =  status == 'Alive' 

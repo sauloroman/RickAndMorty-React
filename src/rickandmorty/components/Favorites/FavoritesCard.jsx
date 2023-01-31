@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { setSelectedCharacter } from "../../../store/slices/selectedCharacter.slice";
+import { toggleSelectedCharacter } from "../../helpers";
 import { 
   ComponentCardCharacterContainer, 
   ComponentCardCharacterImage, 
@@ -11,6 +12,9 @@ export const FavoritesCard = ({ favorite}) => {
 
   const onSelectCharacterCard = () => {
     dispatch( setSelectedCharacter( favorite ) );
+    if ( !document.querySelector('.show-selected') ) {
+      toggleSelectedCharacter();
+    }
   }
 
   return (

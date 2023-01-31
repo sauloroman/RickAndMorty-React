@@ -2,16 +2,26 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import styled from "@emotion/styled"
 import { CharactersSelectedCard, ComponentPageTitle } from "../components";
-import { Sidebar } from "../../ui/components";
+import { MenuButton, Sidebar } from "../../ui/components";
 import { changeTheme } from "../helpers";
 
 const LayoutContainer = styled.div`
   display: grid;
   grid-template-columns: 20% 55% 25%;
+
+  @media ( max-width: 900px ) {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
 `;
 
 const PageContainer = styled.div`
   padding: 5rem 8rem;
+
+  @media ( max-width: 900px ) {
+    padding: 3rem;
+    width: 95%;
+  }
 `
 
 export const LayoutPage = ({ children, title }) => {
@@ -43,6 +53,8 @@ export const LayoutPage = ({ children, title }) => {
       </PageContainer>
 
       <CharactersSelectedCard />
+
+      <MenuButton />
     </LayoutContainer>
   )
 }

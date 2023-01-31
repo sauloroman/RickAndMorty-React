@@ -9,16 +9,33 @@ import PublicIcon from "@mui/icons-material/Public";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { ComponentButton, ComponentPageTitle } from "../Common";
 import { addFavorite, deleteFavorite } from "../../../store/slices/favorites.slice";
-import { IsInFavorites } from "../../helpers";
+import { IsInFavorites, toggleSelectedCharacter } from "../../helpers";
 
 const CharactersSelectedCardContainer = styled.div`
   padding: 5rem;
   border-left: 1px solid var(--border-color);
   height: 100%;
+  position: fixed;
   width: 25%;
   left: 75%;
   background-color: var(--bg-card);
-  position: fixed;
+  transition: all .4s;
+
+  @media ( max-width: 900px ) {
+    left: 100%;
+  }
+`;
+
+const CharactersSelectedHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+      font-size: 4rem;
+      cursor: pointer;
+      color: var(--button-color);
+  }
 `;
 
 const CharactersSelectedCardImageContainer = styled.div`
@@ -31,11 +48,15 @@ const CharactersSelectedCardImageContainer = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-bottom: 5rem;
+
 `;
 
 const CharactersSelectedCardImage = styled.img`
   border-radius: 15px;
   width: 100%;
+  @media ( max-width: 900px ) {
+    width: 100%;
+  }
 `;
 
 const CharactersSelectedCardTitle = styled.h3`
@@ -89,18 +110,22 @@ export const CharactersSelectedCard = () => {
   };
 
   return (
-    <CharactersSelectedCardContainer className="animate__animated animate__fadeInRight">
-      <ComponentPageTitle>{name}</ComponentPageTitle>
+    <CharactersSelectedCardContainer className="animate__animated animate__fadeInRight selectedCharacterContainer">
+
+      <CharactersSelectedHeader>
+        <ComponentPageTitle>{name}</ComponentPageTitle>
+        <i onClick={ toggleSelectedCharacter } className='bx bx-x'></i>
+      </CharactersSelectedHeader>
 
       <CharactersSelectedCardImageContainer>
         <CharactersSelectedCardImage src={image} />
       </CharactersSelectedCardImageContainer>
 
-      <CharactersSelectedCardTitle>
-        Character Information
-      </CharactersSelectedCardTitle>
-
       <CharactersSelectedCardInfo>
+        <CharactersSelectedCardTitle>
+          Character Information
+        </CharactersSelectedCardTitle>
+
         <CharactersSelectedCardItem>
           <Grid3x3Icon /> Id: <span>{id}</span>
         </CharactersSelectedCardItem>
@@ -134,6 +159,7 @@ export const CharactersSelectedCard = () => {
       <ComponentButton
         onClick={onToggleFavorite}
         style={{
+          gridColumn: "2 / 3",
           backgroundColor: IsInFavorites( favorites, selectedCharacter.id )
             ? 'var(--button-favorite-color)'
             : 'var(--button-color)',

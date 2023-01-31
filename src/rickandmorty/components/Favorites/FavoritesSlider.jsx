@@ -8,6 +8,10 @@ import { FavoritesSlide } from "./FavoritesSlide";
 
 const FavoritesSliderContainer = styled.div`
   margin: 5rem 0;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const FavoritesSlider = () => {
@@ -17,7 +21,6 @@ export const FavoritesSlider = () => {
   return (
     <FavoritesSliderContainer className="animate__animated animate__fadeIn">
       <Swiper 
-        grabCursor={true}
         centeredSlides={true}
         slidesPerView={ favorites.length < 4 ? favorites.length : 4}
         loop={true}
@@ -29,7 +32,7 @@ export const FavoritesSlider = () => {
         {
           favorites.map( favorite => (
             <SwiperSlide>
-              <FavoritesSlide key={ favorite.name } {...favorite}/>
+              <FavoritesSlide key={ favorite.url } {...favorite}/>
             </SwiperSlide>
           ))
         }

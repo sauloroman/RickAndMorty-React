@@ -13,6 +13,11 @@ const CharactersSearchByAttributeContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 8rem;
   padding: 1rem 0;
+
+  @media ( max-width: 900px ) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 `;
 
 export const CharactersSearchByAttribute = () => {
