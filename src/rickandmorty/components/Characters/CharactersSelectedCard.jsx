@@ -32,9 +32,14 @@ const CharactersSelectedHeader = styled.header`
   align-items: center;
 
   i {
+      display: none;
       font-size: 4rem;
       cursor: pointer;
       color: var(--button-color);
+
+      @media ( max-width: 900px ) {
+        display: unset;
+      }
   }
 `;
 

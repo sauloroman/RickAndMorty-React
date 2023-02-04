@@ -3,6 +3,8 @@
   --bg-card: #fff;
   --text-color: #000;
   --border-color: #ddd;
+  --login-color: #60BC24;
+  --primary-color: #F3F5F9;
 }
 
 *,
@@ -15,6 +17,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 @media ( max-width: 1200px ) {

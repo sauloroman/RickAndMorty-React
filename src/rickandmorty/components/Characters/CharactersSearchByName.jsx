@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import { useDispatch } from "react-redux";
 import SearchIcon from '@mui/icons-material/Search';
-import { useForm } from "../../hooks";
+import { useForm } from "../../../hooks";
 import { setSearchProperty } from "../../../store/slices/search.slice";
 
 const CharactersSearchByNameContainer = styled.div`

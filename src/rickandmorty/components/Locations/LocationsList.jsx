@@ -1,4 +1,5 @@
-import { useForm, useList } from "../../hooks";
+import { useForm } from "../../../hooks";
+import { useList } from "../../hooks";
 import { ComponentSelectField, ComponentSelectOption, ComponentSelectSelectElement } from "../Common";
 
 export const LocationsList = () => {

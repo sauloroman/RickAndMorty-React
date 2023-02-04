@@ -29,6 +29,7 @@ export const LayoutPage = ({ children, title }) => {
   const selectedCharacter = useSelector( store => store.selectedCharacter );
   const favorites = useSelector( store => store.favorites );
   const theme = useSelector( store => store.theme );
+  const { displayName } = useSelector( store => store.auth );
 
   useEffect( () => {
     localStorage.setItem('selectedCharacter', JSON.stringify( selectedCharacter ) );
@@ -48,7 +49,7 @@ export const LayoutPage = ({ children, title }) => {
       <Sidebar />
 
       <PageContainer>
-        <ComponentPageTitle>{title}</ComponentPageTitle>
+        <ComponentPageTitle>{title} | {displayName}</ComponentPageTitle>
         {children}
       </PageContainer>
 
