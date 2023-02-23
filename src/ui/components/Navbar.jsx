@@ -72,11 +72,6 @@ export const Navbar = () => {
           <NavLink to='/colors' >Colors</NavLink>
         </NavItem>
       </NavList>
-
-      <NavItem>
-        <LogoutIcon />
-        <NavLink to='/auth/init' >Logout</NavLink>
-      </NavItem>
     </NavContainer>
   )
 }
