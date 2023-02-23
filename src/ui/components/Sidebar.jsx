@@ -13,7 +13,7 @@ const SideBarNavigationContainer = styled.div`
   transition: all .4s;
   background-color: var(--primary-color);
   width: 20%;
-  height: 100vh;
+  height: 100%;
   max-height: 100%;
   position: fixed;
   display: flex;

@@ -14,7 +14,7 @@ import { IsInFavorites, toggleSelectedCharacter } from "../../helpers";
 const CharactersSelectedCardContainer = styled.div`
   padding: 5rem;
   border-left: 1px solid var(--border-color);
-  height: 100%;
+  height: 100vh;
   position: fixed;
   width: 25%;
   left: 75%;

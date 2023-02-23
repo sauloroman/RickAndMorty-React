@@ -108,8 +108,8 @@ option {
 /* to control de mobile selected character */
 @media ( max-width: 900px ) {
   .selectedCharacterContainer.show-selected {
-    left: 40%;
-    width: 60%;
+    left: 30%;
+    width: 70%;
   }
   
 }
