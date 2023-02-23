@@ -1,26 +1,15 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { useAuthentication } from "../auth/hooks/useAuthentication"
-import { AuthRoutes } from "../auth/routes/AuthRoutes"
-import { RickAndMortyRoutes } from "../rickandmorty"
+import { CharactersPage, ColorsPage, EpisodePage, FavoritesPage, LocationPage } from "../rickandmorty/pages"
 
 export const AppRouter = () => {
-
-  const status = useAuthentication();
-
-  // if ( status === 'checking' ) {
-  //   return (<></>)
-  // }
-
   return (
     <Routes>
-
-      {
-        (status === 'authenticated') 
-        ? <Route path='/*' element={ <RickAndMortyRoutes /> } />
-        : <Route path='auth/*' element={ <AuthRoutes /> } />
-      }
-
-      <Route path='/*' element={ <Navigate to='/auth/login' /> } />
+      <Route path='/' element={ <CharactersPage /> } />
+      <Route path='episode' element={ <EpisodePage /> } />
+      <Route path='location' element={ <LocationPage /> } />
+      <Route path='favorites' element={ <FavoritesPage /> } />
+      <Route path='colors' element={ <ColorsPage /> } />
+      <Route path='/*' element={ <Navigate to='/' />} />
     </Routes>
   )
 }

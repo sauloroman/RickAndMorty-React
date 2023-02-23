@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { useSelector } from "react-redux"
-
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import { useCounter } from "../../rickandmorty/hooks";

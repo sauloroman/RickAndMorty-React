@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCharacters } from "../../../store/slices/characters.slice";
 import { setPagination } from "../../../store/slices/pagination.slice";
 import { setSearchProperty } from "../../../store/slices/search.slice";
-import { useFetch } from "../../hooks";
-import { useForm } from "../../../hooks";
+import { useFetch, useForm } from "../../hooks";
 import { ComponentSelectField, ComponentSelectLabel, ComponentSelectOption, ComponentSelectSelectElement } from "../Common";
 
 const CharactersSearchByAttributeContainer = styled.div`
